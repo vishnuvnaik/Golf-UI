@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="home.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="./Home.js"></script>
+
 
 
     <style>
@@ -37,7 +37,7 @@
                 <div id="panel" style="display: none;">
                     <header>
                         <div class="logo">
-                            <img src="/images/images.png">
+                            <img src="/assets/images.png">
                         </div>
 
                         <div class="list">
@@ -56,8 +56,6 @@
 
                             </button>
                         </div>
-
-
                     </header>
                 </div>
                 <div class="navbar">
@@ -192,10 +190,46 @@
                         </p>
                     </div>
                 </div>
+                <div class="slideshow-container imageFullSize">
 
+                    <!-- Full-width images with number and caption text -->
+                    <div class="mySlides ">
+                        <img src="../../../assets/golf.jpg" style="width:100%">
+                    </div>
 
+                    <div class="mySlides ">
+                        <img src="../../../assets/bgimage.jpg" style="width:100%">
+                    </div>
 
+                    <div class="mySlides ">
+                        <img src="../../../assets/treeWater.jpg" style="width:100%">
+                    </div>
+
+                </div>
+                <br>
+
+                <!-- The dots/circles -->
+                <div class="slideImage">
+                    <div class="row">
+                        <div class="row2">
+                            <div onclick="plusSlides(-1)">
+                                <img src="../../../assets/arrow_back_black_36x36.png" class="arrowImage"
+                                    style="width:100%">
+                            </div>
+                            <div onclick="plusSlides(1)">
+                                <img src="../../../assets/arrow_forward_black_36x36.png" style="width:100%">
+                            </div>
+                        </div>
+                        <div class="dotCenter">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                        </div>
+
+                    </div>
+                </div>
             </div>
+
             <div class="container zindex">
                 <div class="footerAboveImg ">
                     <div class="centered">
@@ -236,7 +270,7 @@
                 </div>
             </div>
         </footer>
-
+        <script src="./Home.js"></script>
     </div>
 </body>
 
