@@ -10,6 +10,20 @@ $(document).ready(function () {
     $(".heading").show();
   });
 });
+
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+
 var cursor = document.getElementById("cursor");
 document.addEventListener("mousemove", function (e) {
   var x = e.clientX;
@@ -50,3 +64,18 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "flex";
   dots[slideIndex - 1].className += " active";
 }
+
+$(document).ready(function () {
+  $(window).scroll(function () {
+    var height = $(window).scrollTop();
+    var element = $(".animateThis");
+    $(".animateThis").each(function () {
+      if (height > $(this).offset().top) {
+        $(this).addClass("animate");
+        // $(window).off("scroll");
+      } else {
+        $(this).removeClass("animate");
+      }
+    });
+  });
+});

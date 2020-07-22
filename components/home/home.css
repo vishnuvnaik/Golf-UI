@@ -37,9 +37,6 @@ img {
   color: white;
 }
 .text-block1 {
-  /* position: absolute; */
-  /* bottom: 50%; */
-  /* top: 50%; */
   left: 20%;
   transform: translate(-70%, -70%);
   color: white;
@@ -52,8 +49,10 @@ img {
   font-family: lato;
 }
 .bg-image {
-  height: 100%;
+  height: 630px;
   width: 100%;
+  transition: height 1s;
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -118,16 +117,12 @@ img {
 .fullImage {
   width: 85%;
   margin-left: auto;
-  /* margin-top: 80px; */
-  /* margin-bottom: 40px; */
   margin-right: auto;
 }
-/* Hide the images by default */
 .mySlides {
   display: none;
 }
 
-/* Next & previous buttons */
 .prev,
 .next {
   cursor: pointer;
@@ -144,39 +139,16 @@ img {
   user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
   height: 15px;
@@ -286,6 +258,14 @@ img {
   color: #7c7b7b;
   /* opacity: 0.7; */
   padding: 5px;
+  opacity: 1;
+  display: block;
+
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  opacity: 1;
   transform: matrix(1, 0, 0, 1, 0, 0);
 }
 .paraLine {
@@ -305,9 +285,9 @@ img {
   margin-bottom: 40px;
   align-items: center;
 }
-.morePara {
+.newPara {
   width: 50%;
-  /* background-color: red; */
+
   padding: 20px;
   margin: 20px;
 }
@@ -315,10 +295,8 @@ img {
   width: 45%;
   padding: 20px;
   margin: 20px;
-  /* background-color: green; */
 }
 .o-gradient-img__inner {
-  /* position: absolute; */
   display: flex;
   top: -20%;
   left: -20%;
@@ -352,8 +330,7 @@ img {
 .imageFullSize {
   width: 85%;
   margin-left: auto;
-  /* margin-top: 80px; */
-  /* margin-bottom: 40px; */
+
   margin-right: auto;
 }
 .slideImage {
@@ -365,7 +342,6 @@ img {
 
 #myVideo {
   height: 650px;
-  /* width: 100%; */
 }
 .videoStyle {
   margin-top: 80px;
@@ -405,7 +381,7 @@ img {
   align-items: center;
 }
 .headerPart {
-  margin-bottom: 400px;
+  margin-bottom: 250px;
 }
 .footerAboveImg {
   height: 500px;
@@ -527,13 +503,11 @@ a:hover#cursor {
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
 }
-.black {
+.white {
   background-color: white;
-  /* transform: translate(0%, 125%); */
-  /* animation: matrix; */
 }
 .animate {
-  animation: fadeIn 1s;
+  animation: fadeIn 3s;
   animation-iteration-count: 1;
 }
 @keyframes fadeIn {
@@ -541,10 +515,7 @@ a:hover#cursor {
     opacity: 0;
     transform: translateY(40px);
   }
-  /* 50% {
-    opacity: 0.5;
-    transform: translateY(20px);
-  } */
+
   100% {
     opacity: 1;
     transform: translateY(0);
