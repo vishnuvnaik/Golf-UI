@@ -1,6 +1,13 @@
 * {
   box-sizing: border-box;
 }
+body,
+html {
+  height: 100%;
+  margin: 0;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
 .mySlides {
   display: none;
   transition: 1s;
@@ -252,18 +259,17 @@ img {
   transition: width 0.3s;
 }
 .para {
-  font-size: 32px;
-  font-weight: 300;
   font-family: gt-sectra;
-  color: #7c7b7b;
-  /* opacity: 0.7; */
-  padding: 5px;
+  font-size: calc(27px + 17 * (100vw - 500px) / 1500);
+  color: #111;
+  line-height: 1.4;
   opacity: 1;
-  display: block;
+  padding: 5px;
+  --spacing: 10rem;
 
   align-items: center;
   width: 100%;
-  text-align: center;
+  text-align: left;
   position: relative;
   opacity: 1;
   transform: matrix(1, 0, 0, 1, 0, 0);
@@ -505,6 +511,9 @@ a:hover#cursor {
 }
 .white {
   background-color: white;
+  font-family: gt-sectra;
+  font-weight: 200;
+  line-height: 1.4;
 }
 .animate {
   animation: fadeIn 3s;
