@@ -1,23 +1,545 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  cursor: default;
+  -webkit-tap-highlight-color: transparent;
+  font-family: messina-sans;
+  background-color: #fff;
+  user-select: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.listNew {
+  display: none;
+}
+#crossBtn {
+  right: 0;
+  top: 75px;
+  position: absolute;
+}
+.outerBody {
+  padding-left: 40px;
+  padding-right: 40px;
+  position: absolute;
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-row-gap: 25%;
+}
+.firstParagraph {
+  display: none;
+}
+header {
+  transform: translate3d(0px, 0px, 0px);
+  height: 135px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  position: relative;
+  font-family: "NTR", sans-serif;
+  justify-content: space-evenly;
+  width: -webkit-fill-available;
+  list-style-type: none;
+}
+li {
+  display: inline-block;
+}
+li a {
+  text-decoration: none;
+  color: white;
+  font-family: inherit;
+  font-size: 19px;
+  font-weight: lighter;
+  padding: 0 20px;
+
+  position: relative;
+  line-height: 1.5;
+  display: block;
+}
+.cool-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s;
+}
+
+.cool-link:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  pointer-events: all;
+  position: relative;
+  z-index: 2;
+  width: 60%;
+  color: white;
+}
+
+.bar1,
+.bar2 {
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  margin: 7px 0;
+  transition: 0.4s;
+}
+.bar3 {
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-5px, 3px);
+  transform: rotate(-45deg) translate(-5px, 3px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-5px, -5px);
+  transform: rotate(45deg) translate(-10px, -8px);
+}
+.main {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+.video-background {
+  z-index: -1;
+  min-width: 100%;
+  min-height: 25%;
+  width: auto;
+  height: auto;
+}
+video {
+  display: inline-block;
+}
+.para {
+  padding: 150px 70px 150px 70px;
+}
+.para1,
+.para2,
+.para3 {
+  display: block;
+  height: 65px;
+  align-items: center;
+  width: 100%;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  position: relative;
+  opacity: 1;
+  font-size: 47.8147px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+.unforgettableExperience {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding-right: 15%;
+  width: 750px;
+  font-size: 70px;
+  height: fit-content;
+  padding-left: 15%;
+}
+.unforget {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 150px;
+  transform: translate3d(0px, -10px, 0px);
+  /* animation: Slide_Up 15s ease; */
+}
+.experience {
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 75px;
+  transform: translate3d(0px, -40px, 0px);
+  /* animation: Slide_Up 15s ease; */
+}
+@keyframes Slide_Up {
+  0% {
+    transform: translateY(150px);
   }
-  body {
-    cursor: default;
-    -webkit-tap-highlight-color: transparent;
-    font-family: messina-sans;
-    background-color: #fff;
-    user-select: none;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
+  100% {
+    transform: translateY(0);
   }
-  .listNew {
-    display: none;
+}
+.scroll {
+  color: white;
+  font-family: "Quicksand", sans-serif;
+}
+.exclusiveWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.exclusiveCard {
+  padding: 0px 60px 150px 150px;
+  width: 100%;
+}
+img {
+  object-fit: cover;
+  background-color: #f3f3f3;
+  display: block;
+  border-style: none;
+  width: 100%;
+  height: 100%;
+}
+.exclusiveInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 40%;
+  padding-top: 160px;
+  padding-bottom: 160px;
+}
+h {
+  font-size: 45px;
+  font-family: "Playfair Display", serif;
+}
+.paragraph {
+  font-family: "Padauk", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #777;
+  padding-top: 60px;
+}
+.paragraph p {
+  line-height: 2;
+  font-size: 0.9rem;
+}
+.p {
+  display: block;
+  text-align: start;
+  position: relative;
+  opacity: 1;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  height: 45px;
+  color: #777;
+}
+figure {
+  width: 50%;
+}
+.golf figure {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: static;
+  z-index: 1;
+}
+.golf1 figure {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: static;
+  z-index: 1;
+}
+.tracking figure {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: static;
+  z-index: 1;
+  object-fit: cover;
+}
+.threeImagesDataOwter {
+  background-color: ghostwhite;
+  height: fit-content;
+  width: 100%;
+}
+.threeImagesData {
+  width: 100%;
+  height: fit-content;
+  display: grid;
+}
+article {
+  position: relative;
+  padding-top: 10%;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.shadow {
+  background-color: lightgray;
+  left: 30%;
+  position: absolute;
+  width: 75%;
+  height: 68%;
+  top: 38%;
+  z-index: 0;
+}
+.card {
+  padding: 8rem 6rem 5.5rem;
+  z-index: 2;
+  width: 45rem;
+  position: absolute;
+  left: 65%;
+  background: white;
+}
+.card-text {
+  font-size: 22px;
+  font-family: "Padauk", sans-serif;
+  padding-top: 20px;
+}
+.card-body {
+  display: grid;
+}
+h5 {
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  font-size: 55px;
+  font-family: "Nanum Myeongjo", serif;
+  font-family: gt-sectra;
+  font-weight: 200;
+  margin: 0;
+  padding: 0;
+}
+p {
+  line-height: 2;
+  font-size: 0.9rem;
+  margin: 0;
+  padding: 0;
+}
+.button {
+  background-color: white; /* Green */
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  border: 1px solid #777;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 35px 0px;
+  width: 300px;
+  height: 100px;
+  cursor: pointer;
+}
+.tracking article {
+  position: relative;
+  float: right;
+  padding-top: 10%;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.tracking .shadow {
+  background-color: grey; /* For browsers that do not support gradients */
+  background-image: linear-gradient(-90deg, grey, lightgrey);
+  position: absolute;
+  width: 75%;
+  height: 68%;
+  top: 38%;
+  z-index: 0;
+  left: -5%;
+}
+.tracking .card {
+  padding: 8rem 6rem 5.5rem;
+  z-index: 2;
+  width: 45rem;
+  position: absolute;
+  left: -19%;
+  background: white;
+  right: 139%;
+}
+.footerData {
+  display: grid;
+  margin-top: 25%;
+  height: fit-content;
+  width: 100%;
+}
+.footerData section {
+  width: 100%;
+  position: relative;
+  height: fit-content;
+}
+.footerData figure {
+  width: 100%;
+  margin: 0;
+  height: 100vh;
+  padding: 0;
+  position: static;
+  z-index: 1;
+  object-fit: cover;
+  background-color: #f3f3f3;
+}
+.ourWorld {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  background-color: transparent;
+  color: white;
+}
+.ourWorld .button {
+  background-color: transparent;
+  font-size: 20px;
+  color: white;
+}
+footer {
+  background-color: #161f1e;
+}
+.footer {
+  padding: 140px 100px 100px 100px;
+}
+.footerInfo {
+  display: flex;
+  align-items: start;
+  top: 50%;
+  left: 50%;
+  justify-content: space-between;
+}
+.footerInfo img {
+  width: fit-content;
+}
+.inTouch {
+  height: 278px;
+}
+.company ul,
+.inTouch ul {
+  flex-direction: column;
+  line-height: 2;
+  margin-bottom: 0.35rem;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  font-family: "NTR", sans-serif;
+  list-style-type: none;
+}
+.footerNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  pointer-events: all;
+  position: relative;
+  z-index: 2;
+  width: 60%;
+  color: white;
+}
+.last {
+  padding: 10px 100px 100px 100px;
+}
+.last p {
+  line-height: 2;
+  font-size: 20px;
+  margin: 0;
+  color: white;
+  padding: 0;
+  height: 50px;
+  align-items: center;
+}
+h1 {
+  font-size: 40px;
+  font-weight: 100;
+}
+#mobileView {
+  display: none;
+}
+/********** slide toggle *****************/
+#panel header {
+  padding-bottom: 2%;
+  display: flex;
+  padding-top: 5%;
+  width: 100%;
+  height: fit-content;
+  align-items: baseline;
+  justify-content: space-around;
+}
+#panel {
+  background-color: #161f1e;
+  position: absolute;
+  top: -47px;
+  width: 100%;
+  height: 100%;
+}
+.close {
+  border: none;
+  font-size: 60px;
+  color: white;
+  background: transparent;
+}
+.list ul {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  position: relative;
+  font-family: "Playfair Display", serif;
+  justify-content: space-evenly;
+  width: -webkit-fill-available;
+  list-style-type: none;
+}
+.list ul li {
+  display: inline-block;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.list ul li a {
+  text-decoration: none;
+  color: white;
+  font-family: inherit;
+  font-size: 70px;
+  font-weight: lighter;
+  padding: 0 20px;
+  position: relative;
+  line-height: 1.5;
+  display: block;
+}
+.list .cool-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s;
+}
+
+.list .cool-link:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+.panelDivs .logo img {
+  object-fit: cover;
+  background-color: #f3f3f3;
+  display: block;
+  border-style: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* *************** (max-width : 1024px) ******************* */
+@media screen and (min-width: 999px) and (max-width: 1024px) {
+  .video-container {
+    min-height: 100vh;
+    display: flex;
   }
-  #crossBtn {
-    right: 0;
-    top: 75px;
-    position: absolute;
+  .video-background {
+    min-height: 100%;
+    object-fit: fill;
+    width: 100%;
+    z-index: -1;
+    min-width: 100%;
   }
   .outerBody {
     padding-left: 40px;
@@ -26,12 +548,12 @@
     width: 100%;
     height: fit-content;
     display: grid;
-    grid-row-gap: 25%;
   }
-  .firstParagraph {
+  ul {
     display: none;
   }
   header {
+    width: 100%;
     transform: translate3d(0px, 0px, 0px);
     height: 135px;
     z-index: 1000;
@@ -39,192 +561,445 @@
     justify-content: space-between;
     align-items: center;
   }
-  ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    position: relative;
-    font-family: "NTR", sans-serif;
-    justify-content: space-evenly;
-    width: -webkit-fill-available;
-    list-style-type: none;
-  }
-  li {
-    display: inline-block;
-  }
-  li a {
-    text-decoration: none;
-    color: white;
-    font-family: inherit;
-    font-size: 19px;
-    font-weight: lighter;
-    padding: 0 20px;
-  
-    position: relative;
-    line-height: 1.5;
-    display: block;
-  }
-  .cool-link::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    transition: width 0.3s;
-  }
-  
-  .cool-link:hover::after {
-    width: 100%;
-    transition: width 0.3s;
-  }
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    pointer-events: all;
-    position: relative;
-    z-index: 2;
-    width: 60%;
-    color: white;
-  }
-  
-  .bar1,
-  .bar2 {
-    width: 20px;
-    height: 2px;
-    background-color: white;
-    margin: 7px 0;
-    transition: 0.4s;
-  }
-  .bar3 {
-    width: 20px;
-    height: 2px;
-    background-color: white;
-    margin: 6px 0;
-    transition: 0.4s;
-  }
-  
-  .change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-5px, 3px);
-    transform: rotate(-45deg) translate(-5px, 3px);
-  }
-  
-  .change .bar2 {
-    opacity: 0;
-  }
-  
-  .change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-5px, -5px);
-    transform: rotate(45deg) translate(-10px, -8px);
-  }
-  .main {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    overflow: auto;
+  .unforgettableExperience {
     display: flex;
     flex-direction: column;
+    color: white;
+    padding-right: 15%;
+    padding-left: 13%;
+    width: 683px;
+    height: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-67%, -50%);
   }
-  .video-background {
-    z-index: -1;
-    min-width: 100%;
-    min-height: 25%;
-    width: auto;
-    height: auto;
+  .scroll {
+    display: none;
   }
-  video {
-    display: inline-block;
+  .unforget {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 60px;
+    transform: translate3d(0px, -10px, 0px);
+  }
+  .experience {
+    font-family: "Darker Grotesque", sans-serif;
+    font-size: 65px;
+    transform: translate3d(0px, -40px, 0px);
   }
   .para {
-    padding: 150px 70px 150px 70px;
+    padding: 50px 50px 50px 50px;
   }
   .para1,
   .para2,
   .para3 {
     display: block;
-    height: 65px;
+    height: 60px;
     align-items: center;
     width: 100%;
     font-family: "Playfair Display", serif;
     text-align: center;
     position: relative;
     opacity: 1;
-    font-size: 47.8147px;
+    font-size: 22.8147px;
     transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+  .para {
+    display: none;
+  }
+  .firstParagraph {
+    display: block;
+    padding: 110px 75px 110px 75px;
+    font-size: 32px;
+    line-height: 1.3;
+    text-align: center;
+  }
+  .exclusiveCard {
+    padding: 0px 60px 0px 60px;
+    width: 100%;
+    margin-bottom: 10%;
+  }
+  .paragraph {
+    display: none;
+  }
+  #mobileView {
+    display: block;
+    opacity: 1;
+    font-family: "Karla", sans-serif;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    color: #777;
+    line-height: 2;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    margin-top: 8%;
+  }
+  h {
+    font-size: 30px;
+    font-family: "Playfair Display", serif;
+  }
+  .threeImagesDataOwter {
+    background-color: ghostwhite;
+    height: fit-content;
+    width: 100%;
+  }
+  .card {
+    z-index: 2;
+    width: 35rem;
+    padding: 35px 35px 35px 35px;
+    height: 28rem;
+    position: absolute;
+    left: 50%;
+    background: white;
+  }
+  .card-text {
+    font-size: 16px;
+    font-family: "Padauk", sans-serif;
+    padding-top: 20px;
+  }
+  .button {
+    background-color: white;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    border: 1px solid #777;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    margin: 35px 0px;
+    width: 210px;
+    height: 65px;
+    cursor: pointer;
+  }
+  .tracking .card {
+    z-index: 2;
+    width: 35rem;
+    padding: 35px 35px 35px 35px;
+    height: 28rem;
+    position: absolute;
+    right: 50%;
+    background: white;
+  }
+  .tracking .shadow {
+    background-color: grey; /* For browsers that do not support gradients */
+    background-image: linear-gradient(-90deg, grey, lightgrey);
+    position: absolute;
+    width: 86%;
+    height: 68%;
+    top: 39%;
+    z-index: 0;
+    left: -6%;
+  }
+  .shadow {
+    background-color: lightgray;
+    left: 19%;
+    position: absolute;
+    width: 87%;
+    height: 70%;
+    top: 37%;
+    z-index: 0;
+  }
+  .golf,
+  .tracking {
+    margin-bottom: 7%;
+  }
+  .golf1 {
+    margin-bottom: 20%;
+  }
+  .footerData {
+    display: grid;
+    height: fit-content;
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+/* *************** (max-width : 1180px) ******************* */
+@media screen and (min-width: 1025px) and (max-width: 1180px) {
+  .video-container {
+    min-height: 100vh;
+    display: flex;
+  }
+  .video-background {
+    min-height: 100%;
+    object-fit: fill;
+    width: 100%;
+    z-index: -1;
+    min-width: 100%;
+  }
+  .outerBody {
+    padding-left: 40px;
+    padding-right: 40px;
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+    display: grid;
+  }
+  ul {
+    display: flex;
+  }
+  header {
+    width: 100%;
+    transform: translate3d(0px, 0px, 0px);
+    height: 135px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .unforgettableExperience {
     display: flex;
     flex-direction: column;
     color: white;
     padding-right: 15%;
-    width: 750px;
-    font-size: 70px;
+    padding-left: 13%;
+    width: 683px;
     height: fit-content;
-    padding-left: 15%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-67%, -50%);
+  }
+  .scroll {
+    display: none;
   }
   .unforget {
     font-family: "Cormorant Garamond", serif;
-    font-size: 150px;
+    font-size: 60px;
     transform: translate3d(0px, -10px, 0px);
-    /* animation: Slide_Up 15s ease; */
   }
   .experience {
     font-family: "Darker Grotesque", sans-serif;
-    font-size: 75px;
+    font-size: 65px;
     transform: translate3d(0px, -40px, 0px);
-    /* animation: Slide_Up 15s ease; */
   }
-  @keyframes Slide_Up {
-    0% {
-      transform: translateY(150px);
-    }
-    100% {
-      transform: translateY(0);
-    }
+  .para {
+    padding: 50px 50px 50px 50px;
   }
-  .scroll {
-    color: white;
-    font-family: "Quicksand", sans-serif;
+  .para1,
+  .para2,
+  .para3 {
+    display: block;
+    height: 60px;
+    align-items: center;
+    width: 100%;
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    position: relative;
+    opacity: 1;
+    font-size: 22.8147px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
   }
-  .exclusiveWrapper {
-    display: flex;
-    justify-content: space-between;
+  .para {
+    display: none;
+  }
+  .firstParagraph {
+    display: block;
+    padding: 110px 75px 110px 75px;
+    font-size: 37px;
+    line-height: 1.3;
+    text-align: center;
   }
   .exclusiveCard {
-    padding: 0px 60px 150px 150px;
+    padding: 0px 60px 0px 60px;
     width: 100%;
-  }
-  img {
-    object-fit: cover;
-    background-color: #f3f3f3;
-    display: block;
-    border-style: none;
-    width: 100%;
-    height: 100%;
-  }
-  .exclusiveInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 40%;
-    padding-top: 160px;
-    padding-bottom: 160px;
-  }
-  h {
-    font-size: 45px;
-    font-family: "Playfair Display", serif;
+    margin-bottom: 10%;
   }
   .paragraph {
-    font-family: "Padauk", sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    color: #777;
-    padding-top: 60px;
+    display: none;
   }
-  .paragraph p {
+  #mobileView {
+    display: block;
+    opacity: 1;
+    font-family: "Karla", sans-serif;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    color: #777;
     line-height: 2;
-    font-size: 0.9rem;
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
+    margin-top: 8%;
+  }
+  h {
+    font-size: 30px;
+    font-family: "Playfair Display", serif;
+  }
+  .threeImagesDataOwter {
+    background-color: ghostwhite;
+    height: fit-content;
+    width: 100%;
+  }
+  .card {
+    z-index: 2;
+    width: 35rem;
+    padding: 35px 35px 35px 35px;
+    height: 28rem;
+    position: absolute;
+    left: 50%;
+    background: white;
+  }
+  .card-text {
+    font-size: 16px;
+    font-family: "Padauk", sans-serif;
+    padding-top: 20px;
+  }
+  .button {
+    background-color: white;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    border: 1px solid #777;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    margin: 35px 0px;
+    width: 210px;
+    height: 65px;
+    cursor: pointer;
+  }
+  .tracking .card {
+    z-index: 2;
+    width: 35rem;
+    padding: 35px 35px 35px 35px;
+    height: 28rem;
+    position: absolute;
+    right: 50%;
+    background: white;
+  }
+  .tracking .shadow {
+    background-color: grey; /* For browsers that do not support gradients */
+    background-image: linear-gradient(-90deg, grey, lightgrey);
+    position: absolute;
+    width: 86%;
+    height: 68%;
+    top: 39%;
+    z-index: 0;
+    left: -6%;
+  }
+  .shadow {
+    background-color: lightgray;
+    left: 19%;
+    position: absolute;
+    width: 87%;
+    height: 70%;
+    top: 37%;
+    z-index: 0;
+  }
+  .golf,
+  .tracking {
+    margin-bottom: 7%;
+  }
+  .golf1 {
+    margin-bottom: 20%;
+  }
+  .footerData {
+    display: grid;
+    height: fit-content;
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+/* *************** (max-width : 1440px) ******************* */
+@media screen and (min-width: 1181px) {
+  .video-container {
+    min-height: 100vh;
+    display: flex;
+  }
+  .video-background {
+    min-height: 100%;
+    object-fit: fill;
+    width: 100%;
+    z-index: -1;
+    min-width: 100%;
+  }
+  .outerBody {
+    padding-left: 40px;
+    padding-right: 40px;
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+    display: grid;
+  }
+  header {
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+    transform: translate3d(0px, 0px, 0px);
+    height: 135px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: all;
+    position: relative;
+    z-index: 2;
+    width: 75%;
+    color: white;
+  }
+  .unforgettableExperience {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding-right: 15%;
+    width: 60%;
+    height: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-70%, -50%);
+  }
+  .scroll {
+    height: 50px;
+    left: 50%;
+    align-items: center;
+    padding-left: 6%;
+    padding-top: 10%;
+  }
+  .unforget {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 75px;
+    transform: translate3d(0px, -10px, 0px);
+  }
+  .experience {
+    font-family: "Darker Grotesque", sans-serif;
+    font-size: 70px;
+    transform: translate3d(0px, -40px, 0px);
+  }
+  .para {
+    padding: 145px 120px 145px 120px;
+  }
+  .para1,
+  .para2,
+  .para3 {
+    display: block;
+    height: 60px;
+    align-items: center;
+    width: 100%;
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    position: relative;
+    opacity: 1;
+    font-size: 36.8147px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+  .firstParagraph {
+    display: none;
+  }
+  .exclusiveCard {
+    padding: 0px 80px 0px 95px;
+    width: 100%;
+    margin-bottom: 10%;
+  }
+  .exclusiveCard {
+    padding: 0px 80px 0px 95px;
+    width: 100%;
+    margin-bottom: 10%;
   }
   .p {
     display: block;
@@ -232,95 +1007,355 @@
     position: relative;
     opacity: 1;
     transform: matrix(1, 0, 0, 1, 0, 0);
-    height: 45px;
+    height: 35px;
     color: #777;
   }
-  figure {
-    width: 50%;
+  p {
+    color: #777;
   }
-  .golf figure {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    position: static;
-    z-index: 1;
+  .paragraph {
+    font-family: "Padauk", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #777;
+    padding-top: 60px;
+    display: block;
   }
-  .golf1 figure {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    position: static;
-    z-index: 1;
+  #mobileView {
+    display: none;
   }
-  .tracking figure {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    position: static;
-    z-index: 1;
+  h {
+    font-size: 36.7186px;
+    font-family: "Playfair Display", serif;
+    font-family: "Playfair Display", serif;
+  }
+  .golf img,
+  .golf1 img {
     object-fit: cover;
+    background-color: #f3f3f3;
+    display: block;
+    border-style: none;
+    width: 95%;
+    height: 100%;
+  }
+  .tracking img {
+    object-fit: cover;
+    background-color: #f3f3f3;
+    display: block;
+    border-style: none;
+    width: 90%;
+    height: 100%;
+    float: right;
   }
   .threeImagesDataOwter {
     background-color: ghostwhite;
     height: fit-content;
     width: 100%;
   }
+  .card {
+    z-index: 2;
+    width: 38rem;
+    padding: 60px 60px 60px 60px;
+    height: 36rem;
+    position: absolute;
+    left: 60%;
+    background: white;
+  }
+  .card-body {
+    display: grid;
+    padding: 10%;
+  }
+  .card-text {
+    font-size: 18px;
+    font-family: "Padauk", sans-serif;
+    padding-top: 20px;
+  }
+  .button {
+    background-color: white;
+    border: 1px solid #777;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    margin: 35px 0px;
+    width: 210px;
+    height: 65px;
+    cursor: pointer;
+  }
+  .tracking .card {
+    z-index: 2;
+    width: 38rem;
+    padding: 50px 60px 60px 60px;
+    height: 38rem;
+    position: absolute;
+    left: -17%;
+    background: white;
+  }
+  .tracking .shadow {
+    background-color: grey; /* For browsers that do not support gradients */
+    background-image: linear-gradient(-90deg, grey, lightgrey);
+    position: absolute;
+    width: 78%;
+    height: 68%;
+    top: 39%;
+    z-index: 0;
+    left: 4%;
+  }
+  .shadow {
+    background-color: lightgray;
+    left: 14%;
+    position: absolute;
+    width: 87%;
+    height: 70%;
+    top: 37%;
+    z-index: 0;
+  }
+  .golf,
+  .tracking {
+    margin-bottom: 7%;
+  }
+  .golf1 {
+    margin-bottom: 20%;
+  }
+  .footerData {
+    display: grid;
+    height: fit-content;
+    width: 100%;
+    margin-top: 0;
+  }
+  .list ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: inherit;
+    font-size: 58px;
+    font-weight: lighter;
+    position: relative;
+    line-height: 1.5;
+    display: block;
+  }
+  .button:hover {
+    border: 1px solid red;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 425px) {
+  .list ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: inherit;
+    font-size: 30px;
+    font-weight: lighter;
+    padding: 0px 20px;
+    position: relative;
+    line-height: 1;
+    display: block;
+  }
+  #panel header {
+    padding-bottom: 2px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 27%;
+    width: 100%;
+    height: fit-content;
+    align-items: baseline;
+    justify-content: space-around;
+  }
+  .list {
+    margin-top: 15px;
+  }
+  #crossBtn {
+    right: 0;
+    top: 107px;
+    position: absolute;
+  }
+  ul {
+    display: none;
+  }
+  .unforget {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 35px;
+    padding-bottom: 6%;
+    transform: translate3d(0px, -10px, 0px);
+  }
+  .unforgettableExperience {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 260px;
+    padding-left: 0;
+    height: fit-content;
+    margin-top: -35%;
+  }
+  .experience {
+    font-family: "Darker Grotesque", sans-serif;
+    font-size: 43px;
+    transform: translate3d(0px, -40px, 0px);
+  }
+  .scroll {
+    display: none;
+  }
+  .para {
+    display: none;
+  }
+  .firstParagraph {
+    display: block;
+    padding: 50px 40px 50px 40px;
+    font-size: 22px;
+  }
+  .exclusiveCard {
+    padding: 0px 18px 30px 20px;
+    width: 100%;
+  }
+  .exclusiveWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  h {
+    font-size: 25px;
+    font-family: "Playfair Display", serif;
+  }
+  .paragraph {
+    display: none;
+  }
+  #mobileView {
+    display: block;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    margin: 0;
+    margin-top: 8%;
+    padding: 0;
+    font-family: "Karla", sans-serif;
+  }
+  .waterImage {
+    order: -1;
+    max-width: 35rem;
+    height: 100vw;
+    width: 100%;
+    position: relative;
+    margin-left: 0px;
+  }
+  .exclusiveInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 160px;
+    width: 100%;
+    padding: 30px;
+  }
+  .shadow,
+  .tracking .shadow {
+    background-color: grey; /* For browsers that do not support gradients */
+    background-image: linear-gradient(-90deg, grey, lightgrey);
+    left: 12px;
+    position: absolute;
+    width: 400px;
+    height: 75%;
+    top: 70%;
+    z-index: 0;
+  }
+  .golf,
+  .tracking {
+    margin-bottom: 75%;
+  }
+  .golf1 {
+    margin-bottom: 75vh;
+  }
   .threeImagesData {
     width: 100%;
     height: fit-content;
     display: grid;
   }
+  .golf figure,
+  .golf1 figure {
+    margin: 0;
+    width: 418px;
+    height: 45vh;
+    padding: 10px;
+    position: static;
+    z-index: 1;
+    margin-left: 3px;
+  }
+  .tracking figure {
+    margin: 0;
+    width: 486px;
+    height: 45vh;
+    padding: 10px;
+    position: static;
+    z-index: 1;
+    margin-left: 3px;
+  }
   article {
     position: relative;
-    padding-top: 10%;
-    width: 80%;
+    padding-top: 6%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-  .shadow {
-    background-color: lightgray;
-    left: 30%;
-    position: absolute;
-    width: 75%;
-    height: 68%;
-    top: 38%;
-    z-index: 0;
+  .ourWorld .button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    border: 1px solid #777;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 1px 0px;
+    width: 140px;
+    height: 50px;
+    cursor: pointer;
   }
-  .card {
-    padding: 8rem 6rem 5.5rem;
-    z-index: 2;
-    width: 45rem;
-    position: absolute;
-    left: 65%;
-    background: white;
+  .tracking article {
+    position: relative;
+    padding-top: 0%;
+    width: 86%;
+    display: flex;
+    float: none;
+    flex-direction: row;
+    align-items: center;
   }
-  .card-text {
-    font-size: 22px;
+  .card-text,
+  .tracking .card-text,
+  .golf .card-text {
+    font-size: 15px;
     font-family: "Padauk", sans-serif;
     padding-top: 20px;
+    width: 320px;
+    color: #777;
   }
-  .card-body {
-    display: grid;
+  p {
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+  .card,
+  .tracking .card,
+  .golf .card {
+    padding: 0rem 2rem 1.5rem;
+    z-index: 2;
+    width: 24rem;
+    top: 85%;
+    position: absolute;
+    left: 4%;
+    background: white;
   }
   h5 {
     margin-bottom: 1.5rem;
     line-height: 1.4;
-    font-size: 55px;
-    font-family: "Nanum Myeongjo", serif;
+    font-size: 25px;
     font-family: gt-sectra;
     font-weight: 200;
     margin: 0;
-    padding: 0;
-  }
-  p {
-    line-height: 2;
-    font-size: 0.9rem;
-    margin: 0;
+    margin-top: 10%;
     padding: 0;
   }
   .button {
-    background-color: white; /* Green */
+    background-color: white;
     border: none;
     color: black;
     padding: 15px 32px;
@@ -328,814 +1363,91 @@
     border: 1px solid #777;
     text-decoration: none;
     display: inline-block;
-    font-size: 30px;
+    font-size: 13px;
     margin: 35px 0px;
-    width: 300px;
-    height: 100px;
+    width: 140px;
+    height: 50px;
     cursor: pointer;
-  }
-  .tracking article {
-    position: relative;
-    float: right;
-    padding-top: 10%;
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  .tracking .shadow {
-    background-color: grey; /* For browsers that do not support gradients */
-    background-image: linear-gradient(-90deg, grey, lightgrey);
-    position: absolute;
-    width: 75%;
-    height: 68%;
-    top: 38%;
-    z-index: 0;
-    left: -5%;
-  }
-  .tracking .card {
-    padding: 8rem 6rem 5.5rem;
-    z-index: 2;
-    width: 45rem;
-    position: absolute;
-    left: -19%;
-    background: white;
-    right: 139%;
   }
   .footerData {
     display: grid;
-    margin-top: 25%;
+    margin-top: 0;
     height: fit-content;
     width: 100%;
-  }
-  .footerData section {
-    width: 100%;
-    position: relative;
-    height: fit-content;
   }
   .footerData figure {
     width: 100%;
     margin: 0;
-    height: 100vh;
+    height: 45vh;
     padding: 0;
-    position: static;
+    position: relative;
     z-index: 1;
     object-fit: cover;
     background-color: #f3f3f3;
   }
-  .ourWorld {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    background-color: transparent;
-    color: white;
-  }
-  .ourWorld .button {
-    background-color: transparent;
-    font-size: 20px;
-    color: white;
-  }
   footer {
+    width: 100%;
     background-color: #161f1e;
   }
   .footer {
-    padding: 140px 100px 100px 100px;
+    padding: 0;
+    height: 450px;
   }
   .footerInfo {
+    margin-left: 20px;
+    margin-top: 20px;
     display: flex;
-    align-items: start;
-    top: 50%;
-    left: 50%;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
   }
-  .footerInfo img {
-    width: fit-content;
+  .footerNav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    pointer-events: all;
+    position: relative;
+    z-index: 2;
+    color: white;
   }
   .inTouch {
-    height: 278px;
+    height: 0px;
   }
   .company ul,
   .inTouch ul {
     flex-direction: column;
     line-height: 2;
     margin-bottom: 0.35rem;
-    font-size: 20px;
+    font-size: 15px;
     margin: 0;
     padding: 0;
     display: flex;
     font-family: "NTR", sans-serif;
     list-style-type: none;
   }
-  .footerNav {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    pointer-events: all;
-    position: relative;
-    z-index: 2;
-    width: 60%;
-    color: white;
-  }
   .last {
-    padding: 10px 100px 100px 100px;
+    padding: 0px 25px 35px 25px;
   }
   .last p {
     line-height: 2;
-    font-size: 20px;
-    margin: 0;
+    font-size: 12px;
     color: white;
     padding: 0;
     height: 50px;
     align-items: center;
   }
   h1 {
-    font-size: 40px;
+    font-size: 25px;
     font-weight: 100;
   }
-  #mobileView {
+  .para {
     display: none;
   }
-  /********** slide toggle *****************/
-  #panel header {
-    padding-bottom: 2%;
-    display: flex;
-    padding-top: 5%;
-    width: 100%;
-    height: fit-content;
-    align-items: baseline;
-    justify-content: space-around;
-  }
-  #panel {
-    background-color: #161f1e;
-    position: absolute;
-    top: -47px;
-    width: 100%;
-    height: 100%;
-  }
-  .close {
-    border: none;
-    font-size: 60px;
-    color: white;
-    background: transparent;
-  }
-  .list ul {
-    margin: 0;
-    padding: 0;
-    display: grid;
-    position: relative;
-    font-family: "Playfair Display", serif;
-    justify-content: space-evenly;
-    width: -webkit-fill-available;
-    list-style-type: none;
-  }
-  .list ul li {
-    display: inline-block;
-    padding-bottom: 10px;
-    padding-top: 10px;
-  }
-  .list ul li a {
-    text-decoration: none;
-    color: white;
-    font-family: inherit;
-    font-size: 70px;
-    font-weight: lighter;
-    padding: 0 20px;
-    position: relative;
-    line-height: 1.5;
+  .firstParagraph {
     display: block;
+    padding: 50px 50px 50px 50px;
+    font-size: 22px;
   }
-  .list .cool-link::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    transition: width 0.3s;
-  }
-  
-  .list .cool-link:hover::after {
-    width: 100%;
-    transition: width 0.3s;
-  }
-  .panelDivs .logo img {
-    object-fit: cover;
-    background-color: #f3f3f3;
-    display: block;
-    border-style: none;
-    width: 100%;
-    height: 100%;
-  }
-  
-  /* *************** (max-width : 1024px) ******************* */
-  @media screen and (min-width: 999px) and (max-width: 1024px) {
-    .video-container {
-      min-height: 100vh;
-      display: flex;
-    }
-    .video-background {
-      min-height: 100%;
-      object-fit: fill;
-      width: 100%;
-      z-index: -1;
-      min-width: 100%;
-    }
-    .outerBody {
-      padding-left: 40px;
-      padding-right: 40px;
-      position: absolute;
-      width: 100%;
-      height: fit-content;
-      display: grid;
-    }
-    ul {
-      display: none;
-    }
-    header {
-      width: 100%;
-      transform: translate3d(0px, 0px, 0px);
-      height: 135px;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .unforgettableExperience {
-      display: flex;
-      flex-direction: column;
-      color: white;
-      padding-right: 15%;
-      padding-left: 13%;
-      width: 683px;
-      height: fit-content;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-67%, -50%);
-    }
-    .scroll {
-      display: none;
-    }
-    .unforget {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 60px;
-      transform: translate3d(0px, -10px, 0px);
-    }
-    .experience {
-      font-family: "Darker Grotesque", sans-serif;
-      font-size: 65px;
-      transform: translate3d(0px, -40px, 0px);
-    }
-    .para {
-      padding: 50px 50px 50px 50px;
-    }
-    .para1,
-    .para2,
-    .para3 {
-      display: block;
-      height: 60px;
-      align-items: center;
-      width: 100%;
-      font-family: "Playfair Display", serif;
-      text-align: center;
-      position: relative;
-      opacity: 1;
-      font-size: 22.8147px;
-      transform: matrix(1, 0, 0, 1, 0, 0);
-    }
-    .para {
-      display: none;
-    }
-    .firstParagraph {
-      display: block;
-      padding: 110px 75px 110px 75px;
-      font-size: 32px;
-      line-height: 1.3;
-      text-align: center;
-    }
-    .exclusiveCard {
-      padding: 0px 60px 0px 60px;
-      width: 100%;
-      margin-bottom: 10%;
-    }
-    .paragraph {
-      display: none;
-    }
-    #mobileView {
-      display: block;
-      opacity: 1;
-      font-family: "Karla", sans-serif;
-      transform: matrix(1, 0, 0, 1, 0, 0);
-      color: #777;
-      line-height: 2;
-      font-size: 16px;
-      margin: 0;
-      padding: 0;
-      margin-top: 8%;
-    }
-    h {
-      font-size: 30px;
-      font-family: "Playfair Display", serif;
-    }
-    .threeImagesDataOwter {
-      background-color: ghostwhite;
-      height: fit-content;
-      width: 100%;
-    }
-    .card {
-      z-index: 2;
-      width: 35rem;
-      padding: 35px 35px 35px 35px;
-      height: 28rem;
-      position: absolute;
-      left: 50%;
-      background: white;
-    }
-    .card-text {
-      font-size: 16px;
-      font-family: "Padauk", sans-serif;
-      padding-top: 20px;
-    }
-    .button {
-      background-color: white;
-      color: black;
-      padding: 15px 32px;
-      text-align: center;
-      border: 1px solid #777;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 17px;
-      margin: 35px 0px;
-      width: 210px;
-      height: 65px;
-      cursor: pointer;
-    }
-    .tracking .card {
-      z-index: 2;
-      width: 35rem;
-      padding: 35px 35px 35px 35px;
-      height: 28rem;
-      position: absolute;
-      right: 50%;
-      background: white;
-    }
-    .tracking .shadow {
-      background-color: grey; /* For browsers that do not support gradients */
-      background-image: linear-gradient(-90deg, grey, lightgrey);
-      position: absolute;
-      width: 86%;
-      height: 68%;
-      top: 39%;
-      z-index: 0;
-      left: -6%;
-    }
-    .shadow {
-      background-color: lightgray;
-      left: 19%;
-      position: absolute;
-      width: 87%;
-      height: 70%;
-      top: 37%;
-      z-index: 0;
-    }
-    .golf,
-    .tracking {
-      margin-bottom: 7%;
-    }
-    .golf1 {
-      margin-bottom: 20%;
-    }
-    .footerData {
-      display: grid;
-      height: fit-content;
-      width: 100%;
-      margin-top: 0;
-    }
-  }
-  
-  /* *************** (max-width : 1180px) ******************* */
-  @media screen and (min-width: 1025px) and (max-width: 1180px) {
-    .video-container {
-      min-height: 100vh;
-      display: flex;
-    }
-    .video-background {
-      min-height: 100%;
-      object-fit: fill;
-      width: 100%;
-      z-index: -1;
-      min-width: 100%;
-    }
-    .outerBody {
-      padding-left: 40px;
-      padding-right: 40px;
-      position: absolute;
-      width: 100%;
-      height: fit-content;
-      display: grid;
-    }
-    ul {
-      display: flex;
-    }
-    header {
-      width: 100%;
-      transform: translate3d(0px, 0px, 0px);
-      height: 135px;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .unforgettableExperience {
-      display: flex;
-      flex-direction: column;
-      color: white;
-      padding-right: 15%;
-      padding-left: 13%;
-      width: 683px;
-      height: fit-content;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-67%, -50%);
-    }
-    .scroll {
-      display: none;
-    }
-    .unforget {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 60px;
-      transform: translate3d(0px, -10px, 0px);
-    }
-    .experience {
-      font-family: "Darker Grotesque", sans-serif;
-      font-size: 65px;
-      transform: translate3d(0px, -40px, 0px);
-    }
-    .para {
-      padding: 50px 50px 50px 50px;
-    }
-    .para1,
-    .para2,
-    .para3 {
-      display: block;
-      height: 60px;
-      align-items: center;
-      width: 100%;
-      font-family: "Playfair Display", serif;
-      text-align: center;
-      position: relative;
-      opacity: 1;
-      font-size: 22.8147px;
-      transform: matrix(1, 0, 0, 1, 0, 0);
-    }
-    .para {
-      display: none;
-    }
-    .firstParagraph {
-      display: block;
-      padding: 110px 75px 110px 75px;
-      font-size: 37px;
-      line-height: 1.3;
-      text-align: center;
-    }
-    .exclusiveCard {
-      padding: 0px 60px 0px 60px;
-      width: 100%;
-      margin-bottom: 10%;
-    }
-    .paragraph {
-      display: none;
-    }
-    #mobileView {
-      display: block;
-      opacity: 1;
-      font-family: "Karla", sans-serif;
-      transform: matrix(1, 0, 0, 1, 0, 0);
-      color: #777;
-      line-height: 2;
-      font-size: 17px;
-      margin: 0;
-      padding: 0;
-      margin-top: 8%;
-    }
-    h {
-      font-size: 30px;
-      font-family: "Playfair Display", serif;
-    }
-    .threeImagesDataOwter {
-      background-color: ghostwhite;
-      height: fit-content;
-      width: 100%;
-    }
-    .card {
-      z-index: 2;
-      width: 35rem;
-      padding: 35px 35px 35px 35px;
-      height: 28rem;
-      position: absolute;
-      left: 50%;
-      background: white;
-    }
-    .card-text {
-      font-size: 16px;
-      font-family: "Padauk", sans-serif;
-      padding-top: 20px;
-    }
-    .button {
-      background-color: white;
-      color: black;
-      padding: 15px 32px;
-      text-align: center;
-      border: 1px solid #777;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 17px;
-      margin: 35px 0px;
-      width: 210px;
-      height: 65px;
-      cursor: pointer;
-    }
-    .tracking .card {
-      z-index: 2;
-      width: 35rem;
-      padding: 35px 35px 35px 35px;
-      height: 28rem;
-      position: absolute;
-      right: 50%;
-      background: white;
-    }
-    .tracking .shadow {
-      background-color: grey; /* For browsers that do not support gradients */
-      background-image: linear-gradient(-90deg, grey, lightgrey);
-      position: absolute;
-      width: 86%;
-      height: 68%;
-      top: 39%;
-      z-index: 0;
-      left: -6%;
-    }
-    .shadow {
-      background-color: lightgray;
-      left: 19%;
-      position: absolute;
-      width: 87%;
-      height: 70%;
-      top: 37%;
-      z-index: 0;
-    }
-    .golf,
-    .tracking {
-      margin-bottom: 7%;
-    }
-    .golf1 {
-      margin-bottom: 20%;
-    }
-    .footerData {
-      display: grid;
-      height: fit-content;
-      width: 100%;
-      margin-top: 0;
-    }
-  }
-  
-  /* *************** (max-width : 1440px) ******************* */
-  @media screen and (min-width: 1181px) {
-    .video-container {
-      min-height: 100vh;
-      display: flex;
-    }
-    .video-background {
-      min-height: 100%;
-      object-fit: fill;
-      width: 100%;
-      z-index: -1;
-      min-width: 100%;
-    }
-    .outerBody {
-      padding-left: 40px;
-      padding-right: 40px;
-      position: absolute;
-      width: 100%;
-      height: fit-content;
-      display: grid;
-    }
-    header {
-      padding-left: 5%;
-      padding-right: 5%;
-      width: 100%;
-      transform: translate3d(0px, 0px, 0px);
-      height: 135px;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      pointer-events: all;
-      position: relative;
-      z-index: 2;
-      width: 75%;
-      color: white;
-    }
-    .unforgettableExperience {
-      display: flex;
-      flex-direction: column;
-      color: white;
-      padding-right: 15%;
-      width: 60%;
-      height: fit-content;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-70%, -50%);
-    }
-    .scroll {
-      height: 50px;
-      left: 50%;
-      align-items: center;
-      padding-left: 6%;
-      padding-top: 10%;
-    }
-    .unforget {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 75px;
-      transform: translate3d(0px, -10px, 0px);
-    }
-    .experience {
-      font-family: "Darker Grotesque", sans-serif;
-      font-size: 70px;
-      transform: translate3d(0px, -40px, 0px);
-    }
-    .para {
-      padding: 145px 120px 145px 120px;
-    }
-    .para1,
-    .para2,
-    .para3 {
-      display: block;
-      height: 60px;
-      align-items: center;
-      width: 100%;
-      font-family: "Playfair Display", serif;
-      text-align: center;
-      position: relative;
-      opacity: 1;
-      font-size: 36.8147px;
-      transform: matrix(1, 0, 0, 1, 0, 0);
-    }
-    .firstParagraph {
-      display: none;
-    }
-    .exclusiveCard {
-      padding: 0px 80px 0px 95px;
-      width: 100%;
-      margin-bottom: 10%;
-    }
-    .exclusiveCard {
-      padding: 0px 80px 0px 95px;
-      width: 100%;
-      margin-bottom: 10%;
-    }
-    .p {
-      display: block;
-      text-align: start;
-      position: relative;
-      opacity: 1;
-      transform: matrix(1, 0, 0, 1, 0, 0);
-      height: 35px;
-      color: #777;
-    }
-    p {
-      color: #777;
-    }
-    .paragraph {
-      font-family: "Padauk", sans-serif;
-      font-weight: 300;
-      font-size: 18px;
-      color: #777;
-      padding-top: 60px;
-      display: block;
-    }
-    #mobileView {
-      display: none;
-    }
-    h {
-      font-size: 36.7186px;
-      font-family: "Playfair Display", serif;
-      font-family: "Playfair Display", serif;
-    }
-    .golf img,
-    .golf1 img {
-      object-fit: cover;
-      background-color: #f3f3f3;
-      display: block;
-      border-style: none;
-      width: 95%;
-      height: 100%;
-    }
-    .tracking img {
-      object-fit: cover;
-      background-color: #f3f3f3;
-      display: block;
-      border-style: none;
-      width: 90%;
-      height: 100%;
-      float: right;
-    }
-    .threeImagesDataOwter {
-      background-color: ghostwhite;
-      height: fit-content;
-      width: 100%;
-    }
-    .card {
-      z-index: 2;
-      width: 38rem;
-      padding: 60px 60px 60px 60px;
-      height: 36rem;
-      position: absolute;
-      left: 60%;
-      background: white;
-    }
-    .card-body {
-      display: grid;
-      padding: 10%;
-    }
-    .card-text {
-      font-size: 18px;
-      font-family: "Padauk", sans-serif;
-      padding-top: 20px;
-    }
-    .button {
-      background-color: white;
-      border: 1px solid #777;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 17px;
-      margin: 35px 0px;
-      width: 210px;
-      height: 65px;
-      cursor: pointer;
-    }
-    .tracking .card {
-      z-index: 2;
-      width: 38rem;
-      padding: 50px 60px 60px 60px;
-      height: 38rem;
-      position: absolute;
-      left: -17%;
-      background: white;
-    }
-    .tracking .shadow {
-      background-color: grey; /* For browsers that do not support gradients */
-      background-image: linear-gradient(-90deg, grey, lightgrey);
-      position: absolute;
-      width: 78%;
-      height: 68%;
-      top: 39%;
-      z-index: 0;
-      left: 4%;
-    }
-    .shadow {
-      background-color: lightgray;
-      left: 14%;
-      position: absolute;
-      width: 87%;
-      height: 70%;
-      top: 37%;
-      z-index: 0;
-    }
-    .golf,
-    .tracking {
-      margin-bottom: 7%;
-    }
-    .golf1 {
-      margin-bottom: 20%;
-    }
-    .footerData {
-      display: grid;
-      height: fit-content;
-      width: 100%;
-      margin-top: 0;
-    }
-    .list ul li a {
-      text-decoration: none;
-      color: white;
-      font-family: inherit;
-      font-size: 58px;
-      font-weight: lighter;
-      position: relative;
-      line-height: 1.5;
-      display: block;
-    }
-    .button:hover {
-      border: 1px solid red;
-    }
-  }
-  
+}
+    
