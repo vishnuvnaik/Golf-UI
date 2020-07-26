@@ -2,12 +2,14 @@ $(document).ready(function () {
   $("#flip").click(function () {
     $(".heading").hide();
     $(".container").hide();
+    $(".centerStyle").hide();
     $("#panel").slideDown("slow");
   });
   $("#crossBtn").click(function () {
     $("#panel").slideUp("slow");
     $(".container").show();
     $(".heading").show();
+    $(".centerStyle").show();
   });
 });
 

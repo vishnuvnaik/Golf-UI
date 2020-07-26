@@ -19,6 +19,7 @@ img {
 .image {
   height: 630px;
   width: 100%;
+  background: linear-gradient(to bottom, #333, rgb(183, 184, 212));
   box-shadow: 50px 50px lightgray;
 }
 .divBody {
@@ -258,6 +259,7 @@ img {
   width: 100%;
   transition: width 0.3s;
 }
+
 .para {
   font-family: gt-sectra;
   font-size: calc(27px + 17 * (100vw - 500px) / 1500);
@@ -457,18 +459,49 @@ img {
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 6px 16px;
   text-decoration: none;
   font-size: 15px;
   margin-left: 20px;
 }
-.navbar a:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
+
 a:hover#cursor {
   width: 100px;
   height: 100px;
+}
+a.underline {
+  position: relative;
+}
+a.underline:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+a.underline1 {
+  position: relative;
+}
+a.underline1:before {
+  content: "";
+  position: absolute;
+  margin-left: 40px;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  color: white;
+}
+a.underline:hover:before {
+  visibility: visible;
+  width: 100%;
 }
 .centerStyle {
   display: flex;
@@ -631,4 +664,21 @@ a:hover#cursor {
   display: table;
   width: auto;
   position: relative;
+}
+
+@media all and (max-width: 588px) {
+  .newPara {
+    width: 100%;
+    padding: 20px;
+    margin: 20px;
+  }
+  .centerStyle {
+    display: none;
+  }
+  .ImgPara {
+    flex-direction: column;
+  }
+  .paraCenter {
+    width: 100%;
+  }
 }
