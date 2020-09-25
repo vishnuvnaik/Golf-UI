@@ -62,7 +62,7 @@ li a {
 
   position: relative;
   line-height: 1.5;
-  display: block;
+  display: contents;
 }
 .cool-link::after {
   content: "";
@@ -491,7 +491,7 @@ h1 {
   list-style-type: none;
 }
 .list ul li {
-  display: inline-block;
+  display: contents;
   padding-bottom: 10px;
   padding-top: 10px;
 }
@@ -504,7 +504,7 @@ h1 {
   padding: 0 20px;
   position: relative;
   line-height: 1.5;
-  display: block;
+  display: contents;
 }
 .list .cool-link::after {
   content: "";
@@ -1072,7 +1072,7 @@ h1 {
   }
   .button {
     background-color: white;
-    border: 1px solid #777;
+    border: 2px solid #777;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -1082,6 +1082,13 @@ h1 {
     width: 210px;
     height: 65px;
     cursor: pointer;
+  }
+  .button:hover {
+    border-top-color: #0eb7da;
+    border-right-color: #0eb7da;
+    border-bottom-color: #0eb7da;
+    border-left-color: #0eb7da;
+    transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
   }
   .tracking .card {
     z-index: 2;
@@ -1133,9 +1140,6 @@ h1 {
     position: relative;
     line-height: 1.5;
     display: block;
-  }
-  .button:hover {
-    border: 1px solid red;
   }
 }
 
@@ -1450,4 +1454,3 @@ h1 {
     font-size: 22px;
   }
 }
-    

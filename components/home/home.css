@@ -665,6 +665,21 @@ a.underline:hover:before {
   width: auto;
   position: relative;
 }
+.playpause {
+  background-image: url(https://img.icons8.com/wired/64/000000/circled-play.png);
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  margin: auto;
+  background-size: contain;
+  background-position: center;
+  color: white;
+}
 
 @media all and (max-width: 588px) {
   .newPara {
@@ -680,5 +695,35 @@ a.underline:hover:before {
   }
   .paraCenter {
     width: 100%;
+  }
+  .img {
+    width: 100%;
+    padding: 20px;
+    margin: 20px;
+    /* background-color: green; */
+  }
+  .explore {
+    margin: 0px;
+  }
+  .centered {
+    font-size: 20px;
+  }
+  #panel header {
+    padding-bottom: 2px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 27%;
+    width: 100%;
+    height: fit-content;
+    align-items: baseline;
+    justify-content: space-around;
+  }
+  .list {
+    margin-top: 15px;
+  }
+  #crossBtn {
+    right: 0;
+    top: 107px;
+    position: absolute;
   }
 }
